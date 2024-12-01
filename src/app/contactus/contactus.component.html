@@ -1,0 +1,29 @@
+<div class="contact-container">
+    <h1>The Crafted Corner</h1>
+    <p>Search our stores by city</p>
+  
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input 
+        type="text" 
+        id="searchCity" 
+        [(ngModel)]="searchCity" 
+        (input)="onSearch()"
+        placeholder="Enter City Name" 
+        class="search-input"
+      />
+      <button (click)="onSearch()" class="search-button">Search</button>
+    </div>
+  
+    <!-- Popular Cities -->
+    <div class="cities-list">
+      <div *ngFor="let city of filteredCities">
+        <div class="city-card">
+          <img [src]="city.iconImage" alt="{{ city.name }} icon" class="city-icon"/>
+          <h3>{{ city.name }}</h3>
+          <a [href]="city.addressLink" target="_blank">Visit More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

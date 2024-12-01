@@ -1,0 +1,23 @@
+<h2 class="headline">Test Platform</h2>
+<div class="test-assignments-container">
+  <!-- Left Side: Test Section -->
+  <div class="test-section">
+    <h3>Tests</h3>
+    <div class="test-card" *ngFor="let test of tests">
+      <h4>{{ test.subject }} Test</h4>
+      <p>Duration: {{ test.duration }}</p>
+      <button class="test-btn"  (click)="goToTestnow()" >Test Now</button>
+      
+    </div>
+  </div>
+
+  <!-- Right Side: Assignment Section -->
+  <div class="assignment-section">
+    <h3>Assignments & Homework</h3>
+    <div class="assignment-card" *ngFor="let assignment of assignments">
+      <h4>{{ assignment.subject }} Assignment</h4>
+      <p>Score: {{ assignment.score }}</p>
+      <p>Due Date: {{ assignment.dueDate }}</p>
+    </div>
+  </div>
+</div>

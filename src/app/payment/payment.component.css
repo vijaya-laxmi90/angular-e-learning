@@ -1,0 +1,71 @@
+/* Container for PayPal section */
+.paypal-container {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center-align elements horizontally */
+  justify-content: center; /* Center-align content vertically */
+  padding: 50px 20px; /* Adjust padding for better balance */
+  text-align: center; /* Default text alignment for children */
+  max-width: 600px; /* Max width for responsiveness */
+  margin: 0 auto; /* Center the container horizontally */
+  background-color: #f9f9f9; /* Light background for contrast */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Amount text styling */
+.paypal-container .amount {
+  font-size: 1.6rem; /* Larger font size for emphasis */
+  font-weight: bold; /* Make the amount bold */
+  color: #333; /* Dark color for contrast */
+  margin-bottom: 20px; /* Reduced bottom margin */
+}
+
+/* Info text styling */
+.paypal-container .info {
+  font-size: 1.2rem; /* Medium font size for the info */
+  font-weight: 400; /* Lighter weight for info text */
+  color: #555; /* Slightly lighter color for the info */
+  margin-bottom: 30px; /* Adjusted margin to give space */
+  line-height: 1.6; /* Improved line height for better readability */
+}
+
+/* Back button styling */
+.paypal-container .back {
+  font-size: 1.1rem; /* Slightly larger text for the back button */
+  color: #007bff; /* Blue color for the button */
+  cursor: pointer; /* Indicate it's clickable */
+  text-decoration: underline; /* Underlined text for emphasis */
+  padding: 8px 16px; /* Padding for the button */
+  background-color: transparent; /* Transparent background */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the "Back" button */
+.paypal-container .back:hover {
+  color: #0056b3; /* Darker blue on hover */
+  text-decoration: none; /* Remove underline on hover */
+  background-color: #f1f1f1; /* Light background on hover */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 576px) {
+  .paypal-container {
+    padding: 20px; /* Reduce padding on smaller screens */
+    max-width: 90%; /* Allow container to take up more width on small screens */
+  }
+
+  .paypal-container .amount {
+    font-size: 1.4rem; /* Slightly smaller amount font on mobile */
+  }
+
+  .paypal-container .info {
+    font-size: 1rem; /* Smaller font for info text */
+  }
+
+  .paypal-container .back {
+    font-size: 1rem; /* Smaller font for the back button */
+  }
+}

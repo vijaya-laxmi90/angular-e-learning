@@ -1,0 +1,176 @@
+<div class="progress-wrapper">
+  <div id="progress-bar-container">
+    <ul>
+      <li 
+        class="step step01" 
+        (click)="setActiveStep(step)" 
+        [ngClass]="step.stepName === activeStep.stepName ? 'active' : ''"  
+        *ngFor="let step of stepsList">
+        <div class="step-inner">{{ step.stepName }}</div>
+      </li>
+    </ul>
+
+    <div id="line">
+      <div id="line-progress"></div>
+    </div>
+
+    <!-- Progress Content Section -->
+    <div id="progress-content-section">
+      <div class="section-content step1 active" *ngIf="activeStep.stepName=='Basic Details'">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label>Name :</label>
+              <input [(ngModel)]="basicDetails.name" type="text" placeholder="Enter Name" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+              <label>Email :</label>
+              <input [(ngModel)]="basicDetails.email" type="text" placeholder="Enter Email" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+              <label>Password :</label>
+              <input [(ngModel)]="basicDetails.password" type="password" placeholder="Enter Password" class="form-control">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label>Designation :</label>
+              <input [(ngModel)]="basicDetails.designation" type="text" placeholder="Enter Designation" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Contact No :</label>
+              <input [(ngModel)]="basicDetails.contactNo" type="text" placeholder="Enter Contact No" class="form-control">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label>Personal Pin Code :</label>
+              <input [(ngModel)]="basicDetails.personalPincode" type="text" placeholder="Enter Personal Pin Code" class="form-control">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <label>Personal Address :</label>
+              <textarea [(ngModel)]="basicDetails.personalAddress" placeholder="Enter Personal Address" class="form-control"></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-success" (click)="addDetails()">Add Details</button>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <h5>Added Details:</h5>
+              <div *ngFor="let detail of detailsList">
+                <div>
+                  <strong>Name:</strong> {{ detail.name }} <br>
+                  <strong>Email:</strong> {{ detail.email }} <br>
+                  <strong>Designation:</strong> {{ detail.designation }} <br>
+                  <strong>Contact No:</strong> {{ detail.contactNo }} <br>
+                </div>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-content step1 active" *ngIf="activeStep.stepName=='Skills'">
+        <div class="container-fluid">
+          <div class="form-group mt-2" id="tblSkill">
+            <div id="table-container">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Skill Name</th>
+                    <th>Total Experience</th>
+                    <th>Last Version</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="text" placeholder="Skill" class="form-control">
+                    </td>
+                    <td>
+                      <input type="text" placeholder="Total Experience" class="form-control"> 
+                    </td>
+                    <td>
+                      <input type="text" placeholder="Last Version" class="form-control"> 
+                    </td>
+                    <td class="btn-container">
+                      <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">
+                      <button class="btn btn-sm btn-info" onclick="addSkills()">Add</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-content step1 active" *ngIf="activeStep.stepName=='Experience'">
+        <div class="container-fluid">
+          <div class="form-group mt-2" id="tblExperience">
+            <div id="table-container">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Company</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Designation</th>
+                    <th>Project</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="text" class="form-control" placeholder="Company">
+                    </td>
+                    <td>
+                      <input type="date" class="form-control" placeholder="Start Date">
+                    </td>
+                    <td>
+                      <input type="date" class="form-control" placeholder="End Date">
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" placeholder="Designation">
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" placeholder="Project">
+                    </td>
+                    <td class="col-md-12 btn-container d-flex">
+                      <button class="btn btn-sm btn-danger">
+                        <i class="fa fa-trash fa-sm"></i> Delete
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="6">
+                      <button class="btn btn-sm btn-info" onclick="addExperience()">Add</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Progress Content Section -->
+  </div>
+  <!-- End of Progress Bar Container -->
+</div>

@@ -1,0 +1,92 @@
+<h2 class="headline">Welcome to our Tuition Classes</h2>
+
+<div class="registration-container">
+  <div class="form-wrapper">
+    <!-- Left Column: Form -->
+    <div class="form-section">
+      <h3>Register Now</h3>
+      <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <!-- Username Input -->
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input 
+            type="text" 
+            id="username" 
+            name="username" 
+            [(ngModel)]="username" 
+            required 
+            minlength="5"
+            #usernameField="ngModel">
+          <div *ngIf="usernameField.invalid && usernameField.touched" class="validation-error">
+            Username must be more than 5 characters.
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            [(ngModel)]="password" 
+            required 
+            minlength="8"
+            #passwordField="ngModel">
+          <div *ngIf="passwordField.invalid && passwordField.touched" class="validation-error">
+            Password must be at least 8 characters.
+          </div>
+        </div>
+
+        <!-- Gender Radio Buttons -->
+        <div class="form-group">
+          <label>Gender:</label>
+          <div class="gender-options">
+            <input type="radio" name="gender" [(ngModel)]="gender" value="Male" required> Male
+            <input type="radio" name="gender" [(ngModel)]="gender" value="Female" required> Female
+          </div>
+        </div>
+
+        <!-- Accept Terms and Conditions -->
+        <div class="form-group">
+          <label for="terms">I accept the terms and conditions</label>
+          <input type="checkbox" id="terms" name="terms" [(ngModel)]="termsAccepted" required>
+        </div>
+
+        <!-- File Upload -->
+        <div class="form-group">
+          <label for="file">Upload Profile Picture:</label>
+          <input type="file" id="file" (change)="onFileSelected($event)" name="fileUpload">
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" [disabled]="!registerForm.form.valid" class="submit-btn">Submit</button>
+      </form>
+
+      <!-- Success message when form is submitted -->
+      <p *ngIf="isSubmitted" class="success-message">Registration successful!</p>
+    </div>
+
+    <!-- Right Column: Terms and Conditions + Book Seats -->
+    <div class="terms-section">
+      <h3>Terms and Conditions</h3>
+      <p>
+        By registering, you agree to the following terms and conditions:
+      </p>
+      <ul>
+        <li>You must provide accurate information during registration.</li>
+        <li>Your username must be more than 5 characters long.</li>
+        <li>Your password must be at least 8 characters long.</li>
+        <li>You agree to upload a valid profile picture.</li>
+        <li>You accept the terms regarding privacy and data usage.</li>
+      </ul>
+
+      <!-- Book Seats Section -->
+      <div class="book-seats">
+        <h2>Book Your Seat Right Now!</h2>
+        <button class="go-btn">GO</button>
+        <p class="cta-text">Fast Registration: Book Seats Now</p>
+      </div>
+    </div>
+  </div>
+</div>

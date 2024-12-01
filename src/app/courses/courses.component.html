@@ -1,0 +1,42 @@
+<h2 class="headline">Courses</h2>
+<div class="courses-container">
+  <div class="courses-frame">
+    <!-- Top: Available Courses -->
+    <div class="course-list">
+      <h3 class="course-list-title">Available Courses</h3>
+      <div class="course-list-row">
+        <span *ngFor="let course of courses" (click)="displaySyllabus(course.name)" class="course-item">
+          {{ course.name }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Bottom: Course Details -->
+    <div class="course-details">
+      <div class="course-card" *ngFor="let course of courses">
+        <h3>{{ course.name }} ({{ course.price | currency }})</h3>
+        <p class="course-description">{{ course.description }}</p>
+        <button class="toggle-syllabus-btn" (click)="toggleSyllabus(course.name)">
+          {{ showSyllabus[course.name] ? 'Hide' : 'Show' }} Syllabus
+        </button>
+        <div *ngIf="showSyllabus[course.name]" class="syllabus">
+          <p>{{ course.syllabus }}</p>
+        </div>
+        <button class="buy-btn" (click)="openPaymentModal(course)">Buy</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Payment Modal -->
+<div class="modal" *ngIf="isModalOpen">
+  <div class="modal-content">
+    <h4>Payment Confirmation</h4>
+    <p>You are about to purchase {{ selectedCourse?.name }} for {{ selectedCourse?.price | currency }}.</p>
+    <button (click)="completePurchase()">Confirm Payment</button>
+    <button (click)="closePaymentModal()">Cancel</button>
+  </div>
+</div>
+
+<!-- Success Message -->
+<p *ngIf="paymentSuccess" class="success-message">{{ successMessage }}</p>

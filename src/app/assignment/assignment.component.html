@@ -1,0 +1,6 @@
+<h3>Assignments & Homework</h3>
+<div class="assignment-card" *ngFor="let assignment of assignments">
+  <h4>{{ assignment.subject }} Assignment</h4>
+  <p>Score: {{ assignment.score }}</p>
+  <p>Due Date: {{ assignment.dueDate }}</p>
+</div>

@@ -1,0 +1,73 @@
+.test-assignments-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #f0f4f8;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .headline {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #2d74da;
+  }
+  
+  .test-section, .assignment-section {
+    width: 45%;
+  }
+  
+  h3 {
+    text-align: center;
+    color: #2d74da;
+    margin-bottom: 20px;
+  }
+  
+  .test-card, .assignment-card {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h4 {
+    color: #f57c00;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin: 5px 0;
+    color: #666;
+  }
+  
+  .test-btn {
+    background-color: #2d74da;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .test-btn:hover {
+    background-color: #265bb8;
+  }
+  
+  @media (max-width: 768px) {
+    .test-assignments-container {
+      flex-direction: column;
+      width: 90%;
+    }
+  
+    .test-section, .assignment-section {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  

@@ -1,0 +1,159 @@
+/* General Navbar Styling */
+.navbar {
+  background-color: #343a40; /* Dark background color */
+  padding: 0.75rem 1.5rem; /* Improved padding */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+  font-size: 1.9rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none; /* Remove underline */
+  letter-spacing: 1px; /* Slight letter-spacing for a more refined look */
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ffcc00; /* Hover color for brand */
+  }
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;...'); /* Your icon URL */
+}
+
+/* Navbar menu styling */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Align navbar items to the right */
+  list-style-type: none; /* Remove bullet points from the list */
+  padding-left: 0; /* Remove default padding from ul */
+}
+
+.nav-item {
+  margin: 0 1rem; /* Spacing between nav items */
+}
+
+.nav-link {
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none; /* Remove default underline */
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ffcc00; /* Hover color */
+    text-decoration: none; /* No underline on hover */
+  }
+
+  &.active {
+    color: #ffcc00;
+    text-decoration: none; /* No underline on active link */
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 576px) {
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch; /* Ensure links take full width */
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .navbar-brand {
+    text-align: center; /* Center brand on small screens */
+    margin-bottom: 1rem;
+  }
+}
+
+/* Navbar Item Active State */
+.nav-item.active .nav-link {
+  color: #ffcc00; /* Active item color */
+}
+
+
+  /* app.component.css or your main styles.css */
+
+/* Welcome Container */
+.welcome-container {
+  text-align: center;
+  background: linear-gradient(135deg, #74ebd5, #9face6); /* Attractive gradient background */
+  padding: 50px 20px;
+  border-radius: 15px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 1200px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Welcome Heading */
+.welcome-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Welcome Subheading */
+.welcome-subheading {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+
+
+
+
+.footer {
+  background-color: #0c070c; /* Footer background color */
+  color: white; /* Text color */
+  padding: 20px; /* Padding inside the footer */
+  text-align: center; /* Centered text */
+  position: relative; /* Allows proper positioning */
+  bottom: 0; /* Stick to the bottom of the page */
+  width: 100%; /* Full width */
+}
+
+.footer-content {
+  max-width: 800px; /* Maximum width for content */
+  margin: 0 auto; /* Center content */
+}
+
+.footer-title {
+  font-size: 24px; /* Font size for footer title */
+  margin-bottom: 10px; /* Margin below the title */
+}
+
+.social-media {
+  margin-top: 15px; /* Margin above social media section */
+}
+
+.social-media a {
+  margin: 0 10px; /* Margin between social media links */
+  color: white; /* Link color */
+  text-decoration: none; /* No underline */
+  font-weight: bold; /* Bold links */
+}
+
+.social-media a:hover {
+  text-decoration: underline; /* Underline on hover */
+}

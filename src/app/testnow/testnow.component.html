@@ -1,0 +1,29 @@
+<div class="contest-container">
+  <h1> Contests</h1>
+  <div class="contest-card" *ngFor="let contest of contests">
+    <h2>{{ contest.name }}</h2>
+    <p><strong>Date:</strong> {{ contest.date }}</p>
+    <p>{{ contest.description }}</p>
+    <div class="code-box">
+      <p><strong>Code to Solve:</strong> {{ contest.code }}</p>
+      <textarea
+        placeholder="Write your solution here..."
+        [(ngModel)]="contest.userAnswer"
+        (ngModelChange)="updateAnswer(contest.id, $event)">
+      </textarea>
+      <button
+        class="tick-btn"
+        [class.solved]="contest.isSolved"
+        [disabled]="!contest.userAnswer"
+        (click)="markAsSolved(contest.id)">
+        {{ contest.isSolved ? '✔ Solved' : 'Mark as Solved' }}
+      </button>
+    </div>
+    <button
+      class="btn"
+      [class.participating]="contest.isParticipating"
+      (click)="toggleParticipation(contest.id)">
+      {{ contest.isParticipating ? 'Withdraw' : 'Participate' }}
+    </button>
+  </div>
+</div>
